@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
@@ -8,7 +9,10 @@ const userSchema = new Schema({
         required: true,
         unique: true
     },
- 
+    isAdmin: {
+        type: Boolean,
+        default: false
+    }
 })
 
 module.exports = mongoose.model('User', userSchema)
