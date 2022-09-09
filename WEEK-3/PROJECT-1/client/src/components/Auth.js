@@ -8,7 +8,7 @@ export default function Auth(){
     const [inputs, setInputs] = useState(initInputs)
     const [toggle, setToggle] = useState(false)
 
-    const { signup, login } = useContext(UserContext)
+    const { signup, login, errMsg, resetErr } = useContext(UserContext)
 
     function handleChange(e){
         const {name, value} = e.target
@@ -28,18 +28,24 @@ export default function Auth(){
         login(inputs)
     }
 
+    function toggleForm(){
+        setToggle(prev => !prev)
+        resetErr()
+    }
+
     return(
         <div>
-            <h1>Climate Action</h1>
+            <h1 className="climate-title">Climate Action</h1>
             { !toggle ?
                 <>
                     <AuthForm
                         handleChange={handleChange}
                         handleSubmit={handleSignup}
                         inputs={inputs}
+                        errMsg={ errMsg }
                         btnText="Sign Up"
                     />
-                    <button onClick={() => setToggle(prev => !prev)}>Already have an account?</button>
+                    <div className="login-signup"><button onClick={() => toggleForm()}>Already have an account?</button></div>
                 </>
 
                 :
@@ -49,9 +55,10 @@ export default function Auth(){
                         handleChange={handleChange}
                         handleSubmit={handleLogin}
                         inputs={inputs}
+                        errMsg={ errMsg }
                         btnText="Login"
                     />
-                    <button onClick={() => setToggle(prev => !prev)}>Have issues? Sign Up</button>
+                    <div className="login-signup"><button onClick={() => toggleForm()}>Sign Up</button></div>
                 </>
             }
         </div>
