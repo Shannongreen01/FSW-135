@@ -32,4 +32,4 @@ export default function AuthForm(props){
             <p style={{color: "#c00000", textAlign: "center"}}>{ errMsg }</p>
         </form>
     )
-}
+    }

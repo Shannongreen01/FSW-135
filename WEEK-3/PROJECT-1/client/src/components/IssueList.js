@@ -6,4 +6,4 @@ export default function IssueList({issue}){
             { issue.map(issues=> <Issues {...issues} key={issues._id}/>) }
         </>
     )
-}
+    }

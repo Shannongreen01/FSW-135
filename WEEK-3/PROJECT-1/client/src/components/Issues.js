@@ -7,4 +7,4 @@ export default function Issues({title, issue, imgUrl, _id}){
             <p>{ issue }</p>
         </div>
     )
-}
+    }

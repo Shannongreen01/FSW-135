@@ -16,4 +16,4 @@ export default function Profile(){
             <IssueList issue={issue}/>
         </>
     )
-}
+    }

@@ -60,7 +60,7 @@ export default function Auth(){
                     />
                     <div className="login-signup"><button onClick={() => toggleForm()}>Sign Up</button></div>
                 </>
-            }
+}
         </div>
     )
 }
